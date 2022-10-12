@@ -14,7 +14,7 @@ public class JDBCApp {
 //            step3: get statement
             Statement stmt=con.createStatement();
 //      call execute method and get result into  resultset
-            ResultSet rs=stmt.executeQuery("select * from emp");
+            ResultSet rs=stmt.executeQuery("select * from sakila.employee");
 //iterating the result
             while(rs.next()) {
                 System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getInt(3));
