@@ -10,7 +10,7 @@ public class JDBCApp {
             Class.forName("com.mysql.cj.jdbc.Driver");
 //            step2: get connection object
             Connection con= DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/db1","root","root");
+                    "jdbc:mysql://localhost:3306/sakila","root","root");
 //            step3: get statement
             Statement stmt=con.createStatement();
 //      call execute method and get result into  resultset

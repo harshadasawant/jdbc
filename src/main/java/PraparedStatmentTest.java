@@ -8,8 +8,8 @@ public class PraparedStatmentTest {
             Connection con= DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/sakila","root","root");
 
-            insertRecord(con);
-            updateRecord(con);
+//            insertRecord(con);
+//            updateRecord(con);
             deleteRecord(con);
             con.close();
         }catch(Exception e){ System.out.println(e);}
@@ -24,24 +24,24 @@ public class PraparedStatmentTest {
         stmt.setString(2,name);
         stmt.setInt(3,managerId);
         int record =  stmt.executeUpdate();
-        System.out.println(record +" are inserted ");
+        System.out.println(record +" record is inserted ");
         stmt.close();
     }
 
    static void updateRecord(Connection con) throws SQLException {
         PreparedStatement stmt=con.prepareStatement("update employee set manager_id = ? where employeeId = ?");
-        stmt.setInt(1,3);
-        stmt.setInt(2,2);
+        stmt.setInt(1,5);
+        stmt.setInt(2,11);
         int record =  stmt.executeUpdate();
-       System.out.println(record+" updated");
+       System.out.println(record+" record is updated");
        stmt.close();
     }
 
     static void deleteRecord(Connection con) throws SQLException {
         PreparedStatement stmt=con.prepareStatement("delete from employee where employeeId = ?");
-        stmt.setInt(1,7);
+        stmt.setInt(1,12);
         int record =  stmt.executeUpdate();
-        System.out.println(record+" deleted");
+        System.out.println(record+" record is deleted");
         stmt.close();
     }
 }
